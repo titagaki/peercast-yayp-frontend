@@ -9,9 +9,24 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/',
+      path: '/(index\\.php)?',
       name: 'home',
       component: Home
+    },
+    {
+      path: '/getgmt(\\.php)?',
+      name: 'stattistics',
+      component: () => import( './views/Statistics.vue')
+    },
+    {
+      path: '/chat(\\.php)?',
+      name: 'chat',
+      component: () => import( './views/Chat.vue')
+    },
+    {
+      path: '/howto',
+      name: 'howto',
+      component: () => import( './views/HowTo.vue')
     },
     {
       path: '/about',
